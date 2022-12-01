@@ -8,14 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var data = Data()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView {
+            VStack {
+                TextField("User ID", text: $data.userID)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .frame(height: 40)
+                
+                TextField("User PW", text: $data.userPassword)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                
+                NavigationLink (
+                    destination: SecondScreen(info: data),
+                    label: {
+                        Text("Open Second Screen").padding()
+                    }
+                )
+            }
+            .padding()
         }
-        .padding()
     }
 }
 
