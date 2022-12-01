@@ -13,8 +13,9 @@ struct SecondScreen: View {
     
     var body: some View {
         VStack {
-            Text(info.userID)
-            Text(info.userPassword)
+            Text("User ID: \(info.userID)")
+                .padding()
+            Text("User PW: \(info.userPassword)")
         }
     }
 }

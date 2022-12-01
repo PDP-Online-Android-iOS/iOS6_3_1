@@ -29,6 +29,7 @@ struct ContentView: View {
                 )
             }
             .padding()
+            .navigationBarTitle("Observable Object", displayMode: .inline)
         }
     }
 }
